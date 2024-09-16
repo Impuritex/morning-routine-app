@@ -60,7 +60,7 @@
               <div class="label-text2">Name</div>
             </div>
             <div class="input-text">
-              <div class="input-text2">Full name</div>
+              <input type="text" id="nameInput" class="input-field" placeholder="Full name" required>
             </div>
           </div>
           <div class="trailing-icon">
@@ -79,12 +79,45 @@
     </div>
     <div class="button">
       <div class="state-layer3">
-        <div class="label-text3">Continue</div>
+        <button id="continueBtn">Continue</button>
       </div>
     </div>
     <img class="image-2" src="img/image-20.png" />
     <img class="image-1" src="img/image-10.png" />
   </div>
+
+
+  <script>
+
+
+function redirectToNextPage(){
+  window.location.href = "MainView.html";
+}
+
+window.onload = function() {
+  const storedName = localStorage.getItem('userName');
+  if (storedName){
+    redirectToNextPage();
+  }
+}
+
+document.getElementById('continueBtn').addEventListener('click', function() {
+    const name = document.getElementById('nameInput').value;
+    if (name.trim() !== ""){
+      localStorage.setItem('userName', name);
+      console.log('Name saved: ', name);
+      window.location.href = 'MainView.html';
+      
+    }else {
+      alert('Please enter your name')
+      console.log('Enter name to continue!')
+    }
+    
+});
+
+
+
+  </script>
   
 </body>
 </html>

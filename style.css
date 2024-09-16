@@ -59,6 +59,8 @@
   position: absolute;
   left: 78px;
   top: 282px;
+  font-family: 
+
 }
 .image-3 {
   width: 64px;
@@ -247,7 +249,13 @@
   top: 423px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   overflow: hidden;
+
 }
+
+button:hover{
+  background: #d48e6b;
+}
+
 .state-layer3 {
   padding: 10px 24px 10px 24px;
   display: flex;

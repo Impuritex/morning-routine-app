@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <div class="main-view">
   <link rel="stylesheet" href="./vars.css">
   <link rel="stylesheet" href="./style2.css">
@@ -16,11 +23,8 @@
     <br />
     <br />
   </div>
-  <div
-    class="good-morning-name-this-is-how-long-you-should-take-to-get-on-time-today"
-  >
-    Good morning, &lcub;name&rcub;! this is how long you should take to get on
-    time today
+  <div class="good-morning-name-this-is-how-long-you-should-take-to-get-on-time-today">
+    Good morning, <span id="nameDisplay">&lcub;name&rcub;</span>! This is how long you should take to get on time today.
   </div>
   <div class="shower">Shower:</div>
   <div class="dressed">Dressed</div>
@@ -36,3 +40,17 @@
     </div>
   </div>
 </div>
+
+
+
+<script>
+  const name = localStorage.getItem('userName');
+  if (name){
+    document.getElementById('nameDisplay').textContent = name;
+  
+  }else {
+    window.location.href = "index.html";
+  }
+</script>
+
+<html>
