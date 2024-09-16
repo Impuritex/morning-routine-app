@@ -3,13 +3,13 @@
   box-sizing: border-box;
 }
 .starter-screen {
-  background: rgba(38, 158, 197, 0.92);
+  background: #f799ffbe;
   height: 812px;
   position: relative;
   overflow: hidden;
 }
 .rectangle-1 {
-  background: #269ec5;
+  background: #f799ffbe;
   width: 383px;
   height: 65px;
   position: absolute;
@@ -18,7 +18,7 @@
   filter: blur(2px);
 }
 .rectangle-2 {
-  background: #269ec5;
+  background: #f799ffbe;
   width: 383px;
   height: 56px;
   position: absolute;
@@ -235,7 +235,7 @@
   flex: 1;
 }
 .button {
-  background: #c55a26;
+  background: #da83e2be;
   border-radius: 100px;
   display: flex;
   flex-direction: column;

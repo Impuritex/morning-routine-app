@@ -26,11 +26,12 @@
   <div class="good-morning-name-this-is-how-long-you-should-take-to-get-on-time-today">
     Good morning, <span id="nameDisplay">&lcub;name&rcub;</span>! This is how long you should take to get on time today.
   </div>
-  <div class="shower">Shower:</div>
-  <div class="dressed">Dressed</div>
-  <div class="hair">Hair</div>
-  <div class="breakfast">Breakfast</div>
-  <div class="bus-time">Bus time:</div>
+<!-- Adjusted Task Times Display -->
+<div class="shower">Shower: <span id="showerTime"></span></div>
+<div class="dressed">Dressed: <span id="dressedTime"></span></div>
+<div class="hair">Hair: <span id="hairTime"></span></div>
+<div class="breakfast">Breakfast: <span id="breakfastTime"></span></div>
+<div class="bus-time">Bus time: <span id="busTime"></span></div>
   <div class="rectangle-3"></div>
   <div class="icon-button">
     <div class="container">
@@ -44,6 +45,8 @@
 
 
 <script>
+  
+
   const name = localStorage.getItem('userName');
   if (name){
     document.getElementById('nameDisplay').textContent = name;
@@ -51,6 +54,83 @@
   }else {
     window.location.href = "index.html";
   }
+
+
+
+
+
+
+</script>
+
+
+<script>
+// Define the bus timetable (24-hour format)
+const busTimetable = [
+  { time: '06:00', code: '21A' },
+  { time: '06:49', code: '21A' },
+  { time: '07:27', code: '21' },
+  { time: '07:29', code: '21' },
+  { time: '07:30', code: '21' },
+  { time: '07:57', code: '21A' },
+  { time: '08:42', code: '21' },
+  { time: '08:45', code: '21' },
+  { time: '09:16', code: '21A' },
+  { time: '09:44', code: '21' }
+];
+
+// Mock time for testing (use "07:20" format, or set to null to use current time)
+const mockTime = "06:40";  // Set this to test a specific time (e.g., "07:20"). Set to null to use the current time.
+
+// Convert time string (e.g., "07:20") to minutes since midnight
+function timeToMinutes(timeStr) {
+  const [hours, minutes] = timeStr.split(':').map(Number);
+  return hours * 60 + minutes;
+}
+
+// Convert minutes since midnight back to time string (e.g., "07:20")
+function minutesToTime(minutes) {
+  const hours = Math.floor(minutes / 60);
+  const mins = minutes % 60;
+  return `${String(hours).padStart(2, '0')}:${String(mins).padStart(2, '0')}`;
+}
+
+// Function to get current time in minutes since midnight
+function getCurrentTimeInMinutes() {
+  if (mockTime) {
+    return timeToMinutes(mockTime); // Use mock time for testing
+  }
+  const currentTime = new Date();
+  return currentTime.getHours() * 60 + currentTime.getMinutes();
+}
+
+// Function to get the next bus based on the current time
+function getNextBusTime() {
+  const currentMinutes = getCurrentTimeInMinutes();
+
+  for (let bus of busTimetable) {
+    const busTimeInMinutes = timeToMinutes(bus.time);
+    if (busTimeInMinutes > currentMinutes) {
+      return bus; // Return the next available bus
+    }
+  }
+
+  return null; // No more buses today
+}
+
+// Get the next bus time and display it
+function displayNextBusTime() {
+  const nextBus = getNextBusTime();
+  if (nextBus) {
+    console.log(`Next Bus: ${nextBus.code} at ${nextBus.time}`);
+    document.getElementById('busTime').textContent = ` ${nextBus.code}  ${nextBus.time}`;
+  } else {
+    console.log('No upcoming buses today.');
+    document.getElementById('busTime').textContent = 'No upcoming buses today.';
+  }
+}
+
+// Run the function to display the next bus time
+displayNextBusTime();
 </script>
 
 <html>

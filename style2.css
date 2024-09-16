@@ -3,13 +3,13 @@
   box-sizing: border-box;
 }
 .main-view {
-  background: rgba(38, 158, 197, 0.92);
+  background: #f799ffbe;
   height: 812px;
   position: relative;
   overflow: hidden;
 }
 .rectangle-4 {
-  background: #daf0f8;
+  background: #cdb4db;
   border-radius: 50px;
   width: 230px;
   height: 50px;
@@ -19,7 +19,7 @@
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 .rectangle-5 {
-  background: #daf0f8;
+  background: #cdb4db;
   border-radius: 50px;
   width: 230px;
   height: 50px;
@@ -29,7 +29,7 @@
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 .rectangle-6 {
-  background: #daf0f8;
+  background: #cdb4db;
   border-radius: 50px;
   width: 230px;
   height: 50px;
@@ -39,7 +39,7 @@
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 .rectangle-7 {
-  background: #daf0f8;
+  background: #cdb4db;
   border-radius: 50px;
   width: 230px;
   height: 50px;
@@ -49,7 +49,7 @@
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 .rectangle-8 {
-  background: #daf0f8;
+  background: #cdb4db;
   border-radius: 50px;
   width: 230px;
   height: 50px;
@@ -60,14 +60,14 @@
 }
 .image-3 {
   width: 115px;
-  height: 115px;
+  height: 112px;
   position: absolute;
   left: 270px;
-  top: 56px;
+  top: 52px;
   object-fit: cover;
 }
 .rectangle-1 {
-  background: #269ec5;
+  background: #f799ffbe;
   width: 383px;
   height: 64px;
   position: absolute;
@@ -88,7 +88,7 @@
   height: 29px;
 }
 .good-morning-name-this-is-how-long-you-should-take-to-get-on-time-today {
-  color: #f2e56b;
+  color: #160011;
   text-align: left;
   font-family: "FredokaOne-Regular", sans-serif;
   font-size: 20px;
@@ -160,7 +160,7 @@
   height: 43px;
 }
 .rectangle-3 {
-  background: #269ec5;
+  background: #f799ffbe;
   width: 383px;
   height: 56px;
   position: absolute;
@@ -182,7 +182,7 @@
   top: 760px;
 }
 .container {
-  background: #c55a26;
+  background: #cdb4db;
   border-radius: 100px;
   display: flex;
   flex-direction: row;
